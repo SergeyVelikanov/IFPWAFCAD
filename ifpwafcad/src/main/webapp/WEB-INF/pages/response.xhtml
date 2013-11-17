@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h:outputStylesheet name= "css/style.css" />
+
+<title>IFPWAFCAD - <h:outputText value="#{conex.counselorName}"/>.</title>
+</h:head>
+<h:body styleClass="bod">
+
+<h:panelGrid id="pGrid2" styleClass="pGrid" border="0" columns="2" columnClasses="tdClass" headerClass="thClass">
+	 <f:facet name="header">
+	    <h:outputText value="#{conex.subjectNameSelected}"/>
+	 </f:facet>
+		<h:outputText value="Description: " style="font-weight:bold;"/>		
+		<h:outputText value="#{conex.description}" style="font-size:smaller; font-style:italic;"/>
+		
+		<h:outputText value="Counselor: " style="font-weight:bold;"/>
+		<h:outputText>
+		  <h:outputText value="#{conex.councelorInfo}" style="font-weight:bold;"/><br/>
+		  <h:outputText id="dateId" value=" member since: #{conex.memberSince}" style="font-size:smaller; font-style:italic;"/>
+		  <f:convertDateTime for="dateId" type="date" locale="es_ES" />			
+		</h:outputText>
+		
+		<h:outputText value="Contact Details: " style="font-weight:bold;"/>
+		<h:outputText>
+		  <h:outputText value="email: " style="font-weight:bold;"/><h:outputLink value="mailto:#{conex.email}" >#{conex.email}</h:outputLink><br/>
+		  <h:outputText value="phone: " style="font-weight:bold;"/><h:outputText value="#{conex.phone}"/>
+		</h:outputText>	
+		<br/>
+		<h:form>
+		  <h:commandButton value="Back" styleClass="aClass" action="back" />	
+		</h:form>
+</h:panelGrid>
+</h:body>
+</html>

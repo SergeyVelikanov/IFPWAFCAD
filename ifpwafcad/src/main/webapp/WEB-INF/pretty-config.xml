@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+	
+	<rewrite inbound="true" match="WEB-INF/pages/index.xhtml" substitute="inicio.do" outbound="true"/>
+	<rewrite inbound="true" match="WEB-INF/pages/response.xhtml" substitute="respuesta.do" outbound="true"/>
+		
+	<url-mapping id="home">
+		<pattern value="/" />
+		<view-id value="WEB-INF/pages/index.xhtml" />
+	</url-mapping>
+	<url-mapping id="resp">
+		<pattern value="/respuesta.do" />
+		<view-id value="WEB-INF/pages/response.xhtml" />
+	</url-mapping>
+	<url-mapping id="back">
+		<pattern value="/inicio.do" />
+		<view-id value="WEB-INF/pages/index.xhtml" />
+	</url-mapping>
+		
+</pretty-config>

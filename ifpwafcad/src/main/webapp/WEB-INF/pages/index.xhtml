@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h:outputStylesheet name= "css/style.css" />
+
+<title>IFPWAFCAD Homepage</title>
+</h:head>
+<h:body styleClass="bod">
+<h1>Welcome to IFPWAFCAD, the International Former Professional Wrestlers' Association for Counseling and Development!.</h1>
+	
+	<h:panelGrid id="pGrid1" styleClass="pGrid" border="0" columns="1" columnClasses="tdClass" headerClass="thClass">
+	<f:facet name="header">
+	  <h:outputText value="IFPWAFCAD offers expert counseling in a wide range of fields."/>
+	 </f:facet>
+		<h:outputText value="To view the contact details of an IFPWAFCAD certified former
+                             professional wrestler in your area, select a subject below:"/>
+		<h:form>
+		<strong>Select a subject: </strong>
+			<h:selectOneMenu id="subject_id" value="#{conex.subjectIdSelected}" >			    
+      			<f:selectItems value="#{conex.subjectsName.entrySet()}" var="var"
+      			             itemLabel="#{var.value}" itemValue="#{var.key}"/> 
+			</h:selectOneMenu>
+			<h:commandButton value="submit" styleClass="aClass" action="respuesta"/>
+		</h:form>
+		
+	</h:panelGrid>	
+</h:body>
+</html>
